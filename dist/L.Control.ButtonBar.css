@@ -1,0 +1,374 @@
+.buttonbar {
+    position: absolute;
+    margin: auto;
+    transition: height 0.5s ,width 0.5s ;
+    z-index: 1000;
+    border-radius: 4px;
+    border: 2px solid rgba(0,0,0,.2);
+    background-color: rgba(255,255,255,1);
+}
+
+
+
+.buttonbar-horz {
+    height: 40px ;
+    max-width: calc(100% - 80px);
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+.buttonbar-vert {
+    width: 40px ;
+    max-height: calc(100% - 80px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+.buttonbar-right.buttonbar-justify-center,
+.buttonbar-left.buttonbar-justify-center
+{
+    top: 0;
+    bottom: 0;
+}
+
+.buttonbar-top.buttonbar-justify-center,
+.buttonbar-bottom.buttonbar-justify-center
+{
+    right: 0;
+    left: 0;
+}
+
+
+/*BAR CLOSED HEIGHT*/
+.buttonbar.collapsed {
+    border: none !important;
+    box-shadow: 0 0px 0px rgba(0,0,0,.65);
+}
+/*BAR CLOSED HEIGHT*/
+.buttonbar-horz.collapsed {
+    height: 0px;
+}
+.buttonbar-vert.collapsed {
+    width: 0px;
+}
+
+    /*BAR TOTAL WIDTH*/
+    /*
+@media (min-width:768px) and (max-width:991px) {
+    .buttonbar {
+        width: 305px
+    }
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+    .buttonbar {
+        width: 390px
+    }
+}
+
+@media (min-width:1200px) {
+    .buttonbar {
+        width: 460px
+    }
+}*/
+.buttonbar-top {
+    top: 0;
+}
+
+.buttonbar-bottom {
+    bottom: 0;
+}
+
+.buttonbar-left {
+    left: 0;
+    margin-left: 10px;
+}
+
+.buttonbar-right {
+    right: 0;
+}
+
+.buttonbar-left.buttonbar-justify-start,
+.buttonbar-left.buttonbar-justify-start,
+.buttonbar-right.buttonbar-justify-start,
+.buttonbar-right.buttonbar-justify-start 
+{
+    top: 10px !important;
+}
+.buttonbar-left.buttonbar-justify-end,
+.buttonbar-left.buttonbar-justify-end,
+.buttonbar-right.buttonbar-justify-end,
+.buttonbar-right.buttonbar-justify-end {
+    bottom: 10px !important;
+}
+.buttonbar-top.buttonbar-justify-start,
+.buttonbar-top.buttonbar-justify-start,
+.buttonbar-bottom.buttonbar-justify-start,
+.buttonbar-bottom.buttonbar-justify-start {
+    left: 10px !important;
+}
+
+.buttonbar-top.buttonbar-justify-end,
+.buttonbar-top.buttonbar-justify-end,
+.buttonbar-bottom.buttonbar-justify-end,
+.buttonbar-bottom.buttonbar-justify-end {
+    right: 10px !important;
+}
+/*BAR OFFSETFROM EDGE*/
+@media (min-width:768px) {
+    .buttonbar-top {
+        top: 10px !important;
+    }
+
+    .buttonbar-bottom {
+        bottom: 10px !important;
+    }
+    .buttonbar-left {
+        left: 10px !important;
+    }
+
+    .buttonbar-right {
+        right: 10px !important;
+    }
+}
+
+/*BAR SNAP TO EDGE WITH SMALL SCREEN*/
+@media (max-width:768px) {
+
+    .buttonbar {
+        background-color: rgba(255,255,255,.1);
+    }
+    .buttonbar-top {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-top: none;
+        top: 0px;
+    }
+
+    .buttonbar-bottom {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom: none;
+        bottom: 0px;
+    }
+    .buttonbar-left {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-left: none;
+        left: 0px;
+    }
+    .buttonbar-right {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-right: none;
+        right: 0px;
+    }
+}
+
+/*GROUPS*/
+.buttonbar{
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+}
+
+.buttonbar-horz  {
+    flex-direction: row;
+}
+
+.buttonbar-vert  {
+    flex-direction: column;
+}
+
+
+.buttonbar > ul {
+    flex-grow:1;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 0;
+}
+
+.buttonbar-horz > ul {
+    height: 100%;
+    flex-direction: row;
+}
+
+.buttonbar-vert  > ul {
+    width: 100%;
+    flex-direction: column;
+}
+
+.buttonbar-horz  ul + ul {
+    border-left: 1px solid rgba(51,51,51,.4);
+}
+
+.buttonbar-vert  ul + ul {
+    border-top: 1px solid rgba(51,51,51,.4);
+}
+
+.buttonbar > ul > li {
+
+    color: #333;
+    font-size: 12pt;
+
+
+}
+
+.buttonbar-horz  > ul > li {
+    width: 40px;
+    min-width: 40px;
+    height: 100%;
+
+
+    display: inline-block;
+}
+
+.buttonbar-vert  > ul > li {
+    height: 40px;
+    min-height: 40px;
+    width: 100%;
+}
+
+.buttonbar > li > a, .buttonbar > ul > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.buttonbar > li:hover, .buttonbar > ul > li:hover {
+    color: #000;
+    background-color: #eee
+}
+
+.buttonbar > li.active, .buttonbar > ul > li.active {
+    color: #fff;
+    background-color: #0074d9
+}
+
+.buttonbar > li.disabled, .buttonbar > ul > li.disabled {
+    color: rgba(51,51,51,.4)
+}
+
+.buttonbar > li.disabled:hover, .buttonbar > ul > li.disabled:hover {
+    background: 0 0
+}
+
+.buttonbar > li.disabled > a, .buttonbar > ul > li.disabled > a {
+    cursor: default
+}
+
+
+/*GROUPS*/
+/*.buttonbar-groups{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+}
+
+.buttonbar-horz > .buttonbar-groups {
+    flex-direction: row;
+}
+
+.buttonbar-vert > .buttonbar-groups {
+    flex-direction: column;
+}
+
+
+.buttonbar-groups > ul {
+    flex-grow:1;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 0;
+}
+
+.buttonbar-horz > .buttonbar-groups > ul {
+    height: 100%;
+    flex-direction: row;
+}
+
+.buttonbar-vert > .buttonbar-groups > ul {
+    width: 100%;
+    flex-direction: column;
+}
+
+.buttonbar-horz > .buttonbar-groups ul + ul {
+    border-left: 1px solid rgba(51,51,51,.4);
+}
+
+.buttonbar-vert > .buttonbar-groups ul + ul {
+    border-top: 1px solid rgba(51,51,51,.4);
+}
+
+.buttonbar-groups > ul > li {
+
+    color: #333;
+    font-size: 12pt;
+
+    transition: all 80ms;
+
+}
+
+.buttonbar-horz > .buttonbar-groups > ul > li {
+    width: 40px;
+    min-width: 40px;
+    height: 100%;
+
+
+    display: inline-block;
+}
+
+.buttonbar-vert > .buttonbar-groups > ul > li {
+    height: 40px;
+    min-height: 40px;
+    width: 100%;
+}
+
+.buttonbar-groups > li > a, .buttonbar-groups > ul > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.buttonbar-groups > li:hover, .buttonbar-groups > ul > li:hover {
+    color: #000;
+    background-color: #eee
+}
+
+.buttonbar-groups > li.active, .buttonbar-groups > ul > li.active {
+    color: #fff;
+    background-color: #0074d9
+}
+
+.buttonbar-groups > li.disabled, .buttonbar-groups > ul > li.disabled {
+    color: rgba(51,51,51,.4)
+}
+
+.buttonbar-groups > li.disabled:hover, .buttonbar-groups > ul > li.disabled:hover {
+    background: 0 0
+}
+
+.buttonbar-groups > li.disabled > a, .buttonbar-groups > ul > li.disabled > a {
+    cursor: default
+}*/
+    
